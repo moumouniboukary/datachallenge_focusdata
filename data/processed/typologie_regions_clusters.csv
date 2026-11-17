@@ -1,0 +1,14 @@
+Region,Cluster_Id,Typologie_Equite,Score_Vulnerabilite_SCVE,TBS_Total,TAP_Filles,IPS_TBS,IPS_TAP,Deperdition_Filles,Taux_CEP_Filles
+BOUCLE DU MOUHOUN,1,Zone en Transition (Vulnérabilité Moyenne),47.2,62.7,39.4,1.003,1.125,52.6,82.2
+CASCADES,1,Zone en Transition (Vulnérabilité Moyenne),43.3,77.5,50.3,0.944,1.037,52.10000000000001,88.7
+CENTRE,0,Pôle Résilient / Avancé (Équité Favorable),19.4,115.4,91.9,1.013,1.108,33.89999999999999,91.1
+CENTRE-EST,1,Zone en Transition (Vulnérabilité Moyenne),42.8,78.8,52.7,0.977,1.174,47.2,91.9
+CENTRE-NORD,1,Zone en Transition (Vulnérabilité Moyenne),50.2,58.0,31.2,0.985,1.303,49.099999999999994,91.7
+CENTRE-OUEST,0,Pôle Résilient / Avancé (Équité Favorable),24.7,100.9,82.5,1.028,1.196,32.900000000000006,81.7
+CENTRE-SUD,0,Pôle Résilient / Avancé (Équité Favorable),24.6,100.9,80.4,0.986,1.136,33.0,91.7
+EST,2,Zone d'Urgence Prioritaire (Très Vulnérable),44.4,29.6,17.9,0.97,1.182,26.700000000000003,91.4
+HAUTS-BASSINS,0,Pôle Résilient / Avancé (Équité Favorable),28.7,93.1,74.5,1.013,1.179,34.0,89.7
+NORD,1,Zone en Transition (Vulnérabilité Moyenne),59.8,95.9,51.5,0.987,1.246,86.19999999999999,87.9
+PLATEAU CENTRAL,1,Zone en Transition (Vulnérabilité Moyenne),35.6,100.9,73.3,0.962,1.202,46.0,89.3
+SAHEL,2,Zone d'Urgence Prioritaire (Très Vulnérable),50.2,27.6,10.8,0.909,0.939,35.5,84.2
+SUD-OUEST,1,Zone en Transition (Vulnérabilité Moyenne),40.5,82.2,54.6,0.969,1.038,53.199999999999996,87.0
