@@ -91,19 +91,18 @@ if df is not None:
     selected_region = st.sidebar.selectbox("Région d'analyse :", regions_list, index=0)
 
     st.sidebar.markdown("---")
-    st.sidebar.markdown("### 🛠️ Outils & Documents")
+    st.sidebar.markdown("###Outils & Documents")
 
     html_tb_side = os.path.join(BASE_DIR, "livrables", "05_interpretation", "tableau_de_bord.html")
     if os.path.exists(html_tb_side):
         with open(html_tb_side, "r", encoding="utf-8") as f:
-            st.sidebar.download_button("🌐 Tableau Hors-Ligne (HTML)", f.read(), file_name="tableau_de_bord_focuseduc.html", mime="text/html", use_container_width=True)
+            st.sidebar.download_button("Tableau Hors-Ligne (HTML)", f.read(), file_name="tableau_de_bord_focuseduc.html", mime="text/html", use_container_width=True)
 
     html_fiche_side = os.path.join(BASE_DIR, "livrables", "05_interpretation", "fiche_une_page.html")
     if os.path.exists(html_fiche_side):
         with open(html_fiche_side, "r", encoding="utf-8") as f:
-            st.sidebar.download_button("📄 Fiche Décisionnelle 1 Page", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html", use_container_width=True)
+            st.sidebar.download_button("Fiche Décisionnelle 1 Page", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html", use_container_width=True)
 
-    st.sidebar.caption("💡 *Astuce : Dans votre dossier, vous pouvez aussi double-cliquer directement sur les fichiers `.bat` pour les ouvrir sans navigateur web.*")
 
 
 
@@ -161,7 +160,7 @@ if df is not None:
         progres_ips = merged_prev[(merged_prev["diff_ips"] > 0.05) & (merged_prev["Region"] != "NATIONAL")]
 
         if len(alerts_chocs) > 0 or len(alerts_ips) > 0:
-            with st.expander(f"⚠️ DÉTECTEUR PROACTIF D'ANOMALIES & D'ALERTES ({selected_year} vs {prev_year})", expanded=True):
+            with st.expander(f"DÉTECTEUR PROACTIF D'ANOMALIES & D'ALERTES ({selected_year} vs {prev_year})", expanded=True):
                 if len(alerts_chocs) > 0:
                     for _, row_a in alerts_chocs.iterrows():
                         st.markdown(f"<div class='alert-box'>🔴 <b>ALERTE CHOC D'EFFECTIFS :</b> La région <b>{row_a['Region']}</b> subit une chute brutale de <b>{row_a['diff_eff_pct']:.1f}%</b> de ses effectifs scolarisés par rapport à {prev_year}.</div>", unsafe_allow_html=True)
@@ -174,15 +173,15 @@ if df is not None:
 
     # Onglets d'analyse enrichis
     tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
-        "📊 Diagnostic National",
-        "⚖️ Parité Fille-Garçon",
-        "🌾 Fracture Urbain / Rural",
-        "📉 Chocs & Résilience de Crise",
-        "🚨 Zones Prioritaires (SCVE)",
-        "🔍 Comparateur Territorial",
-        "🎯 Recommandations & Simulation",
-        "🛡️ Qualité & Audit Données",
-        "📑 Livrables & Documents"
+        "Diagnostic National",
+        "Parité Fille-Garçon",
+        "Fracture Urbain / Rural",
+        "Chocs & Résilience de Crise",
+        "Zones Prioritaires (SCVE)",
+        "Comparateur Territorial",
+        "Recommandations & Simulation",
+        "Qualité & Audit Données",
+        "Livrables & Documents"
     ])
 
     # ------------------ ONGLET 1 : DIAGNOSTIC GLOBAL ------------------
@@ -288,7 +287,7 @@ if df is not None:
         # Survie de cohorte CP1 -> CM2
         if df_survie is not None:
             st.markdown("---")
-            st.subheader("📚 Rétention de Pseudo-Cohorte : Transition CP1 ➔ CM2 (5 ans d'intervalle)")
+            st.subheader("Rétention de Pseudo-Cohorte : Transition CP1 ➔ CM2 (5 ans d'intervalle)")
             st.caption("Méthodologie UNESCO / CONFEMEN : Ratio des effectifs CM2(t+5) / CP1(t) par sexe.")
             
             sc1, sc2 = st.columns([2, 1])
@@ -317,7 +316,7 @@ if df is not None:
 
     # ------------------ ONGLET 3 : FRACTURE URBAIN / RURAL ------------------
     with tab3:
-        st.subheader("🌾 Disparités Territoriales : Fracture Urbain vs Rural")
+        st.subheader("Disparités Territoriales : Fracture Urbain vs Rural")
 
         if df_ur is not None:
             c_ur1, c_ur2 = st.columns(2)
@@ -352,7 +351,7 @@ if df is not None:
 
     # ------------------ ONGLET 4 : CHOCS SÉCURITAIRES & RÉSILIENCE ------------------
     with tab4:
-        st.subheader("📉 Analyse des Chocs d'Effectifs & Impact Sécuritaire")
+        st.subheader("Analyse des Chocs d'Effectifs & Impact Sécuritaire")
         st.write("Ce module détecte automatiquement les **chocs d'effectifs** (baisse annuelle supérieure à 10%), indicateurs directs des crises sécuritaires et des fermetures d'écoles.")
 
         if df_chocs is not None:
@@ -401,7 +400,7 @@ if df is not None:
         st.plotly_chart(fig_bar_rank, use_container_width=True)
 
         # Système d'identification automatique des zones prioritaires
-        st.markdown("### 🎯 Système d'Identification Automatique des Zones Prioritaires")
+        st.markdown("###Système d'Identification Automatique des Zones Prioritaires")
         top_col1, top_col2 = st.columns(2)
 
         with top_col1:
@@ -426,7 +425,7 @@ if df is not None:
             }), use_container_width=True)
 
         st.markdown("---")
-        st.markdown("#### 📐 Indice Global de Disparité Éducative (Score Composite SCVE)")
+        st.markdown("####Indice Global de Disparité Éducative (Score Composite SCVE)")
         st.info("""
         **Méthodologie de l'Indice Global (SCVE - Échelle 0 à 100) :**  
         Cet indicateur synthétique officiel combine trois dimensions critiques de l'éducation :  
@@ -448,7 +447,7 @@ if df is not None:
 
     # ------------------ ONGLET 6 : COMPARATEUR TERRITORIAL ------------------
     with tab6:
-        st.subheader("🔍 Comparateur Territorial Bilatéral (Face-à-Face)")
+        st.subheader("Comparateur Territorial Bilatéral (Face-à-Face)")
         st.write("Comparez instantanément deux régions pour mesurer leurs écarts d'accès, d'achèvement et de vulnérabilité.")
 
         reg_options = sorted([r for r in df["Region"].unique() if r != "NATIONAL"])
@@ -493,7 +492,7 @@ if df is not None:
 
     # ------------------ ONGLET 7 : RECOMMANDATIONS & SIMULATEUR ------------------
     with tab7:
-        st.subheader("🎯 Aide à la Décision : Simulateur d'Impact et Recommandations")
+        st.subheader("Aide à la Décision : Simulateur d'Impact et Recommandations")
         st.write("Ce module permet aux directeurs régionaux et aux maires de projeter l'effet d'investissements ciblés sur le maintien des filles.")
 
         sim_col1, sim_col2 = st.columns([1, 1])
@@ -523,14 +522,14 @@ if df is not None:
                 st.metric("Indice de Parité Projeté (IPS)", f"{proj_ips:.3f}", f"{proj_ips - cur_ips:+.3f}")
 
             st.markdown("---")
-            st.markdown("##### 📋 Action prioritaire recommandée pour cette région :")
+            st.markdown("##### Action prioritaire recommandée pour cette région :")
             if cur_tap_f < 40:
                 st.error(f"🔴 **Plan d'urgence humanitaire :** La région **{s_region}** nécessite la sécurisation physique des écoles, la cantine gratuite et des bourses de soutien.")
             elif latrine > 40:
                 st.success(f"🟢 L'investissement dans les blocs de latrines hygiéniques séparées offre le plus fort taux d'élasticité sur la rétention des filles au CM1-CM2.")
 
         st.markdown("---")
-        st.markdown("### 📋 Matrice Stratégique : Du Constat à la Recommandation Décisionnelle")
+        st.markdown("###Matrice Stratégique : Du Constat à la Recommandation Décisionnelle")
         st.markdown("Pistes d'action concrètes directement corrélées aux résultats des modèles statistiques :")
 
         recs_data = [
@@ -544,7 +543,7 @@ if df is not None:
 
     # ------------------ ONGLET 8 : QUALITÉ & AUDIT DES DONNÉES ------------------
     with tab8:
-        st.subheader("🛡️ Rigueur Scientifique & Contrôle Qualité des Données")
+        st.subheader("Rigueur Scientifique & Contrôle Qualité des Données")
         st.write("Conformément au barème du jury, voici l'audit exhaustif d'intégrité et de traçabilité des données officielles traitées.")
 
         q_c1, q_c2, q_c3 = st.columns(3)
@@ -555,18 +554,18 @@ if df is not None:
         with q_c3:
             st.metric("Cohérence Totaux Nationaux", "100% vérifié", "Somme Régions = National")
 
-        st.markdown("#### 📋 Matrice d'Audit et de Conformité")
+        st.markdown("####Matrice d'Audit et de Conformité")
         audit_table = [
-            {"Point de Contrôle": "Valeurs Manquantes", "Statut": "✅ Validé (0 NaN)", "Description": "140 lignes x 20 colonnes consolidées sans aucune donnée manquante."},
-            {"Point de Contrôle": "Harmonisation Toponymique", "Statut": "✅ Validé", "Description": "Résolution des variantes d'orthographe (HAUT-BASSINS standardisé en HAUTS-BASSINS)."},
-            {"Point de Contrôle": "Découpage Administratif", "Statut": "✅ Conforme", "Description": "Gestion rigoureuse du passage 13/17 régions avec table de correspondance officielle 45 provinces."},
-            {"Point de Contrôle": "Différenciation Année Scolaire / Civile", "Statut": "✅ Conforme", "Description": "Format de cohorte scolaire strict (2015-2016 à 2024-2025)."},
-            {"Point de Contrôle": "Vérification des Totaux", "Statut": "✅ Certifié", "Description": "Somme des garçons et filles rigoureusement égale aux effectifs totaux pour chaque région."}
+            {"Point de Contrôle": "Valeurs Manquantes", "Statut": "Validé (0 NaN)", "Description": "140 lignes x 20 colonnes consolidées sans aucune donnée manquante."},
+            {"Point de Contrôle": "Harmonisation Toponymique", "Statut": "Validé", "Description": "Résolution des variantes d'orthographe (HAUT-BASSINS standardisé en HAUTS-BASSINS)."},
+            {"Point de Contrôle": "Découpage Administratif", "Statut": "Conforme", "Description": "Gestion rigoureuse du passage 13/17 régions avec table de correspondance officielle 45 provinces."},
+            {"Point de Contrôle": "Différenciation Année Scolaire / Civile", "Statut": "Conforme", "Description": "Format de cohorte scolaire strict (2015-2016 à 2024-2025)."},
+            {"Point de Contrôle": "Vérification des Totaux", "Statut": "Certifié", "Description": "Somme des garçons et filles rigoureusement égale aux effectifs totaux pour chaque région."}
         ]
         st.dataframe(pd.DataFrame(audit_table), use_container_width=True)
 
         st.markdown("---")
-        st.markdown("#### 🔬 Modélisation Prédictive & Apprentissage Automatique")
+        st.markdown("####Modélisation Prédictive & Apprentissage Automatique")
         st.markdown("""
         * **Algorithme supervisé :** Forêt Aléatoire (*Random Forest Regressor*, 100 arbres, profondeur 5).
         * **Performances statistiques :** $R^2 = 0.9439$ — Erreur moyenne (RMSE) = $6.13$ points.
@@ -575,34 +574,34 @@ if df is not None:
 
     # ------------------ ONGLET 9 : LIVRABLES & DOCUMENTS ------------------
     with tab9:
-        st.subheader("📑 Restitution Ministérielle & Livrables")
+        st.subheader("Restitution Ministérielle & Livrables")
         st.write("Documents et tableaux de bord conçus pour les cadres du ministère, les maires et le jury du Data Challenge.")
 
         doc_c1, doc_c2, doc_c3 = st.columns(3)
 
         with doc_c1:
-            st.markdown("### 🌐 Tableau Hors-Ligne")
+            st.markdown("###Tableau Hors-Ligne")
             st.write("Fichier HTML autonome (108 Ko) fonctionnant **100% sans connexion internet**, avec carte SVG interactive et curseurs de priorisation.")
             html_tb_path = os.path.join(BASE_DIR, "livrables", "05_interpretation", "tableau_de_bord.html")
             if os.path.exists(html_tb_path):
                 with open(html_tb_path, "r", encoding="utf-8") as f:
-                    st.download_button("📥 Télécharger tableau_de_bord.html", f.read(), file_name="tableau_de_bord_focuseduc.html", mime="text/html")
+                    st.download_button("Télécharger tableau_de_bord.html", f.read(), file_name="tableau_de_bord_focuseduc.html", mime="text/html")
 
         with doc_c2:
-            st.markdown("### 📄 Fiche Décisionnelle 1 Page")
+            st.markdown("###Fiche Décisionnelle 1 Page")
             st.write("Fiche synthétique conçue pour les réunions de cabinet du Ministère : messages clés, alertes régionales et recommandations immédiates.")
             html_fiche_path = os.path.join(BASE_DIR, "livrables", "05_interpretation", "fiche_une_page.html")
             if os.path.exists(html_fiche_path):
                 with open(html_fiche_path, "r", encoding="utf-8") as f:
-                    st.download_button("📥 Télécharger fiche_une_page.html", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html")
+                    st.download_button("Télécharger fiche_une_page.html", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html")
 
        
         # Affichage de la carte d'alerte haute résolution
         carte_path = os.path.join(BASE_DIR, "docs", "figures", "carte_alerte.png")
         if os.path.exists(carte_path):
             st.markdown("---")
-            st.subheader("🗺️ Carte d'Alerte Territoriale (Limites Officielles OCHA / IGB)")
+            st.subheader("Carte d'Alerte Territoriale (Limites Officielles OCHA / IGB)")
             st.image(carte_path, caption="Carte officielle d'alerte de l'indice de parité filles-garçons au Burkina Faso", use_container_width=True)
 
 st.markdown("---")
-st.caption("FocusEduc — Solution unifiée d'aide à la décision pour le Data Challenge Burkina (Semaine du Numérique 2026)")
+st.caption("FocusEduc, Solution unifiée d'aide à la décision pour le Data Challenge Burkina (Semaine du Numérique 2026)")
