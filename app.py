@@ -575,8 +575,8 @@ if df is not None:
 
     # ------------------ ONGLET 9 : LIVRABLES & DOCUMENTS ------------------
     with tab9:
-        st.subheader("📑 Restitution Ministérielle & Livrables Officiels")
-        st.write("Tous les documents et tableaux de bord conçus pour les cadres du ministère, les maires et le jury du Data Challenge.")
+        st.subheader("📑 Restitution Ministérielle & Livrables")
+        st.write("Documents et tableaux de bord conçus pour les cadres du ministère, les maires et le jury du Data Challenge.")
 
         doc_c1, doc_c2, doc_c3 = st.columns(3)
 
