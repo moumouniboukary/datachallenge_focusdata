@@ -193,38 +193,63 @@ if df is not None:
     with tab2:
         st.subheader(f"Analyse approfondie de la parité filles / garçons ({selected_year})")
 
-        col_p1, col_p2 = st.columns(2)
+        # 1. Graphique en barres de l'IPS par région (Plein écran / grande largeur)
+        df_comp_ips = df_year[df_year["Region"] != "NATIONAL"].sort_values("IPS_TAP")
 
-        with col_p1:
-            df_comp_ips = df_year[df_year["Region"] != "NATIONAL"].sort_values("IPS_TAP")
-            colors = ["#D32F2F" if v < 0.97 else ("#388E3C" if v <= 1.03 else "#1976D2") for v in df_comp_ips["IPS_TAP"]]
+        fig_bar_ips = px.bar(
+            df_comp_ips, x="Region", y="IPS_TAP",
+            title="<b>Indice de Parité de Genre à l'Achèvement (IPS TAP) par Région</b>",
+            labels={"IPS_TAP": "Indice de Parité (IPS)", "Region": "Région"},
+            color="IPS_TAP",
+            color_continuous_scale="RdYlGn",
+            text_auto=".3f",
+            height=460
+        )
+        fig_bar_ips.add_hline(y=0.97, line_dash="dash", line_color="#D32F2F", annotation_text="Seuil parité bas (0.97)", annotation_position="top left")
+        fig_bar_ips.add_hline(y=1.03, line_dash="dash", line_color="#1976D2", annotation_text="Seuil parité haut (1.03)", annotation_position="bottom left")
+        fig_bar_ips.update_layout(
+            font=dict(size=12),
+            xaxis=dict(tickangle=-30, tickfont=dict(size=11)),
+            yaxis=dict(range=[0, max(df_comp_ips['IPS_TAP'].max() * 1.1, 1.25)]),
+            coloraxis_colorbar=dict(title="IPS"),
+            margin=dict(l=40, r=40, t=60, b=80)
+        )
+        fig_bar_ips.update_traces(textposition="outside", cliponaxis=False)
+        st.plotly_chart(fig_bar_ips, use_container_width=True)
 
-            fig_bar_ips = px.bar(
-                df_comp_ips, x="Region", y="IPS_TAP",
-                title="Indice de Parité de Genre à l'Achèvement (IPS TAP) par Région",
-                labels={"IPS_TAP": "IPS (Norme UNESCO : [0.97 - 1.03])"},
-                color="IPS_TAP",
-                color_continuous_scale="RdYlGn",
-                height=400
-            )
-            fig_bar_ips.add_hline(y=0.97, line_dash="dot", line_color="red", annotation_text="Seuil parité bas (0.97)")
-            fig_bar_ips.add_hline(y=1.03, line_dash="dot", line_color="blue", annotation_text="Seuil parité haut (1.03)")
-            st.plotly_chart(fig_bar_ips, use_container_width=True)
+        st.markdown("---")
 
-        with col_p2:
-            fig_scat = px.scatter(
-                df_year[df_year["Region"] != "NATIONAL"],
-                x="TAP_Garcons", y="TAP_Filles",
-                text="Region",
-                size="Effectif_Total_Eleves",
-                color="Score_Vulnerabilite_SCVE",
-                color_continuous_scale="Plasma",
-                title="Corrélation Achèvement Garçons vs Filles par Région",
-                labels={"TAP_Garcons": "TAP Garçons (%)", "TAP_Filles": "TAP Filles (%)"},
-                height=400
-            )
-            fig_scat.add_shape(type="line", x0=0, y0=0, x1=100, y1=100, line=dict(color="gray", dash="dash"))
-            st.plotly_chart(fig_scat, use_container_width=True)
+        # 2. Graphique de Corrélation Filles vs Garçons (Aéré et lisible)
+        df_scatter_data = df_year[df_year["Region"] != "NATIONAL"].copy()
+
+        fig_scat = px.scatter(
+            df_scatter_data,
+            x="TAP_Garcons", y="TAP_Filles",
+            text="Region",
+            size="Effectif_Total_Eleves",
+            color="Score_Vulnerabilite_SCVE",
+            color_continuous_scale="Viridis",
+            title="<b>Comparaison Territoriale de l'Achèvement : Garçons vs Filles (%)</b>",
+            labels={"TAP_Garcons": "Achèvement Garçons (%)", "TAP_Filles": "Achèvement Filles (%)", "Score_Vulnerabilite_SCVE": "Vulnérabilité (SCVE)"},
+            hover_name="Region",
+            hover_data={"TAP_Garcons": ":.1f%", "TAP_Filles": ":.1f%", "IPS_TAP": ":.3f", "Score_Vulnerabilite_SCVE": True, "Effectif_Total_Eleves": False},
+            height=520
+        )
+        # Ligne d'égalité stricte 45 degrés
+        fig_scat.add_shape(type="line", x0=0, y0=0, x1=100, y1=100, line=dict(color="#888888", width=2, dash="dash"))
+        fig_scat.add_annotation(x=70, y=72, text="Égalité stricte (Filles = Garçons)", showarrow=False, font=dict(color="#666666", size=11))
+        fig_scat.update_traces(
+            textposition="top center",
+            textfont=dict(size=11, color="#111111"),
+            marker=dict(line=dict(width=1.5, color="#222222"), opacity=0.85)
+        )
+        fig_scat.update_layout(
+            xaxis=dict(range=[0, 105], dtick=10, gridcolor="#E0E0E0"),
+            yaxis=dict(range=[0, 105], dtick=10, gridcolor="#E0E0E0"),
+            plot_bgcolor="#FAFAFA",
+            margin=dict(l=40, r=40, t=60, b=50)
+        )
+        st.plotly_chart(fig_scat, use_container_width=True)
 
         # Survie de cohorte CP1 -> CM2
         if df_survie is not None:
@@ -237,11 +262,18 @@ if df is not None:
                 fig_surv = px.bar(
                     df_survie, x="cohorte_cp1", y="ratio_cm2_sur_cp1", color="sexe",
                     barmode="group",
-                    title="Taux de Survie Apparente CP1 vers CM2 selon la Cohorte",
-                    labels={"cohorte_cp1": "Cohorte d'entrée CP1", "ratio_cm2_sur_cp1": "Ratio de survie CM2 / CP1"},
+                    title="<b>Taux de Survie Apparente CP1 vers CM2 selon la Cohorte</b>",
+                    labels={"cohorte_cp1": "Cohorte d'entrée CP1", "ratio_cm2_sur_cp1": "Ratio de survie CM2 / CP1", "sexe": "Sexe"},
                     color_discrete_map={"filles": "#E91E63", "garcons": "#1976D2"},
-                    height=350
+                    text_auto=".2f",
+                    height=400
                 )
+                fig_surv.update_layout(
+                    xaxis_title="Cohorte d'entrée au CP1",
+                    yaxis_title="Ratio de survie CM2 / CP1",
+                    font=dict(size=11)
+                )
+                fig_surv.update_traces(textposition="outside")
                 st.plotly_chart(fig_surv, use_container_width=True)
             with sc2:
                 st.markdown("#### Synthèse Rétention")
