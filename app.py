@@ -596,14 +596,7 @@ if df is not None:
                 with open(html_fiche_path, "r", encoding="utf-8") as f:
                     st.download_button("📥 Télécharger fiche_une_page.html", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html")
 
-        with doc_c3:
-            st.markdown("### 📘 Rapport Officiel (PDF)")
-            st.write("Rapport institutionnel complet de 15 pages en 7 sections normées avec méthodologie, modélisation Random Forest et plan d'action.")
-            pdf_path = os.path.join(BASE_DIR, "docs", "RAPPORT_OFFICIEL_DEFI2.pdf")
-            if os.path.exists(pdf_path):
-                with open(pdf_path, "rb") as f:
-                    st.download_button("📥 Télécharger le Rapport PDF", f.read(), file_name="RAPPORT_OFFICIEL_DEFI2.pdf", mime="application/pdf")
-
+       
         # Affichage de la carte d'alerte haute résolution
         carte_path = os.path.join(BASE_DIR, "docs", "figures", "carte_alerte.png")
         if os.path.exists(carte_path):
