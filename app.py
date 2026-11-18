@@ -109,22 +109,34 @@ if df is not None:
     """)
 
 # En-tête principal
-st.title("🇧🇫 FocusEduc : Système d'Aide à la Décision Éducative")
-st.markdown("**Mesure, Modélisation et Réduction des Disparités Éducatives au Burkina Faso (2016-2025)**")
+st.title("🇧🇫 FocusEduc : Plateforme d'Analyse des Disparités Éducatives")
+st.markdown("**Mesure, Modélisation et Aide à la Décision pour l'Éducation au Burkina Faso (2016-2025)**")
 
-# Encadré officiel Défi 2 : Question centrale et Réponse directe dès l'entrée
+# Encadré officiel Défi 2 : Réponse directe aux 2 Grandes Questions
 st.markdown("""
-<div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 18px 24px; border-radius: 10px; color: white; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-    <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; font-weight: 600; margin-bottom: 6px;">
-        🎯 Défi 2 · Disparités d'accès (Question officielle du concours)
+<div style="background: linear-gradient(135deg, #0d2b45 0%, #203c56 100%); padding: 20px 24px; border-radius: 12px; color: white; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-left: 6px solid #20bf6b;">
+    <div style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; font-weight: 700; color: #20bf6b; margin-bottom: 8px;">
+        🎯 Défi 2 · Disparités d'accès à l'éducation — Cadre Officiel du Concours
     </div>
-    <div style="font-size: 1.25rem; font-weight: 700; line-height: 1.4; margin-bottom: 12px;">
-        « Où les écarts d'accès à l'école sont-ils les plus grands (filles-garçons, ville-campagne) et évoluent-ils ? »
-    </div>
-    <div style="background: rgba(255, 255, 255, 0.12); padding: 12px 16px; border-radius: 6px; font-size: 0.95rem; line-height: 1.5;">
-        <b>Réponse synthétique issue des données officielles DGESS (2015-2025) :</b><br>
-        • <b>Filles-Garçons :</b> Le retard d'accès des filles est maximal au <b>Sahel</b> (IPS = 0.88) et à l'<b>Est</b> (IPS = 0.91). À l'inverse, dans les pôles urbains (Centre, Hauts-Bassins), les filles complètent davantage le primaire que les garçons (IPS achèvement > 1.15). Au niveau national, l'écart s'est résorbé en 10 ans (IPS passé de 0.940 à 0.996).<br>
-        • <b>Ville-Campagne :</b> C'est la fracture la plus profonde du pays. Le taux brut de scolarisation passe de <b>> 95% dans le Centre urbain</b> à <b>28.5% dans le Sahel rural</b> (ratio de 1 à 4). Entre 2018 et 2023, la crise a fait chuter les effectifs ruraux de <b>583 000 élèves (-24.5%)</b> pendant que les villes progressaient (+32%), avant un net rebond amorcé en 2024-2025.
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 10px;">
+        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px 16px; border-radius: 8px; border-top: 3px solid #f39c12;">
+            <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; color: #f39c12;">
+                1. Inégalités Filles vs Garçons : Sont-elles les plus fortes ?
+            </div>
+            <div style="font-size: 0.92rem; line-height: 1.45; color: #ecf0f1;">
+                <b>Non au niveau national</b> : L'accès au primaire a atteint la quasi-parité en 10 ans (IPS passé de <b>0.940 à 0.996</b>).<br>
+                <b>Oui localement</b> : Des poches de retard sévère subsistent au <b>Sahel (IPS 0.88)</b> et à l'<b>Est (IPS 0.91)</b>. En milieu urbain (Centre, Hauts-Bassins), la tendance s'inverse avec un achèvement plus fort chez les filles (IPS > 1.10).
+            </div>
+        </div>
+        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px 16px; border-radius: 8px; border-top: 3px solid #e74c3c;">
+            <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; color: #e74c3c;">
+                2. Inégalités Urbain vs Rural : Sont-elles les plus fortes ?
+            </div>
+            <div style="font-size: 0.92rem; line-height: 1.45; color: #ecf0f1;">
+                <b>OUI, C'EST LA FRACTURE MAJEURE DU PAYS</b> : Le taux de scolarisation passe de <b>> 95% dans le Centre urbain</b> à <b>28.5% dans le Sahel rural</b> (ratio de 1 à 4).<br>
+                Entre 2018 et 2023, le milieu rural a perdu <b>583 000 élèves (-24.5%)</b> avec les fermetures de classes, pendant que les villes progressaient (+32%). Le rebond s'amorce nettement en 2024-2025.
+            </div>
+        </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -140,8 +152,8 @@ if df is not None:
         "⚖️ Parité Fille-Garçon",
         "🌾 Fracture Urbain / Rural",
         "📉 Chocs & Résilience de Crise",
-        "🗺️ Typologie & Vulnérabilité",
-        "🎯 Simulateur d'Impact (What-If)",
+        "🚨 Zones Prioritaires (SCVE)",
+        "🎯 Recommandations & Simulateur",
         "📑 Livrables & Restitution Ministérielle"
     ])
 
@@ -361,6 +373,42 @@ if df is not None:
         )
         st.plotly_chart(fig_bar_rank, use_container_width=True)
 
+        # Système d'identification automatique des zones prioritaires
+        st.markdown("### 🎯 Système d'Identification Automatique des Zones Prioritaires")
+        top_col1, top_col2 = st.columns(2)
+
+        with top_col1:
+            st.markdown("#### 🔴 Top 5 : Plus fortes disparités Filles-Garçons (Déficit Filles)")
+            top5_genre = df_year[df_year["Region"] != "NATIONAL"].sort_values("IPS_TAP", ascending=True).head(5)
+            st.dataframe(top5_genre[["Region", "IPS_TAP", "TAP_Filles", "TAP_Garcons", "Ecart_Genre_TAP_pts"]].rename(columns={
+                "Region": "Région",
+                "IPS_TAP": "IPS Achèvement",
+                "TAP_Filles": "Achèvement F (%)",
+                "TAP_Garcons": "Achèvement G (%)",
+                "Ecart_Genre_TAP_pts": "Écart F-G (pts)"
+            }), use_container_width=True)
+
+        with top_col2:
+            st.markdown("#### 🔴 Top 5 : Plus fortes vulnérabilités territoriales (Score SCVE)")
+            top5_scve = df_year[df_year["Region"] != "NATIONAL"].sort_values("Score_Vulnerabilite_SCVE", ascending=False).head(5)
+            st.dataframe(top5_scve[["Region", "Score_Vulnerabilite_SCVE", "TBS_Total", "Deperdition_Filles"]].rename(columns={
+                "Region": "Région",
+                "Score_Vulnerabilite_SCVE": "Indice SCVE (0-100)",
+                "TBS_Total": "TBS Global (%)",
+                "Deperdition_Filles": "Déperdition F (pts)"
+            }), use_container_width=True)
+
+        st.markdown("---")
+        st.markdown("#### 📐 Indice Global de Disparité Éducative (Score Composite SCVE)")
+        st.info("""
+        **Méthodologie de l'Indice Global (SCVE - Échelle 0 à 100) :**  
+        Cet indicateur synthétique officiel combine trois dimensions critiques de l'éducation :  
+        • **Déperdition scolaire globale (40%)** : Abandon d'élèves mesuré entre le CP1 et le CM2.  
+        • **Déficit d'achèvement primaire (35%)** : Écart au taux d'achèvement optimal.  
+        • **Pénalité de non-parité de genre (25%)** : Pénalisation lorsque l'IPS descend sous la norme UNESCO (0.97).  
+        *Plus le score SCVE est élevé (> 60), plus la région est en situation d'urgence prioritaire.*
+        """)
+
         st.markdown("#### Profil territorial détaillé des 13 régions")
         disp_cols = ["Region", "TBS_Total", "TAP_Filles", "IPS_TAP", "Deperdition_Filles", "Score_Vulnerabilite_SCVE"]
         st.dataframe(df_rank[disp_cols].rename(columns={
@@ -371,10 +419,10 @@ if df is not None:
             "Score_Vulnerabilite_SCVE": "Indice SCVE"
         }), use_container_width=True)
 
-    # ------------------ ONGLET 6 : SIMULATEUR WHAT-IF ------------------
+    # ------------------ ONGLET 6 : RECOMMANDATIONS & SIMULATEUR ------------------
     with tab6:
-        st.subheader("🎯 Simulateur d'Impact de Politiques Publiques (What-If)")
-        st.write("Projeter l'impact d'interventions ciblées sur l'achèvement scolaire des filles et l'équité territoriale.")
+        st.subheader("🎯 Aide à la Décision : Simulateur d'Impact et Recommandations")
+        st.write("Ce module permet aux directeurs régionaux et aux maires de projeter l'effet d'investissements ciblés sur le maintien des filles.")
 
         sim_col1, sim_col2 = st.columns([1, 1])
 
@@ -403,11 +451,24 @@ if df is not None:
                 st.metric("Indice de Parité Projeté (IPS)", f"{proj_ips:.3f}", f"{proj_ips - cur_ips:+.3f}")
 
             st.markdown("---")
-            st.markdown("##### 📋 Recommandation opérationnelle générée :")
+            st.markdown("##### 📋 Action prioritaire recommandée pour cette région :")
             if cur_tap_f < 40:
-                st.error(f"🔴 **Priorité Urgente :** La région **{s_region}** nécessite un plan de choc associant sécurisation physique, gratuité de la cantine et kits de dignité.")
+                st.error(f"🔴 **Plan d'urgence humanitaire :** La région **{s_region}** nécessite la sécurisation physique des écoles, la cantine gratuite et des bourses de soutien.")
             elif latrine > 40:
-                st.success(f"🟢 L'investissement dans les blocs de latrines séparées offre le plus fort taux d'élasticité sur la rétention des filles au CM1-CM2.")
+                st.success(f"🟢 L'investissement dans les blocs de latrines hygiéniques séparées offre le plus fort taux d'élasticité sur la rétention des filles au CM1-CM2.")
+
+        st.markdown("---")
+        st.markdown("### 📋 Matrice Stratégique : Du Constat à la Recommandation Décisionnelle")
+        st.markdown("Pistes d'action concrètes directement corrélées aux résultats des modèles statistiques :")
+
+        recs_data = [
+            {"Constat Analytique": "Faible accès et retard des filles (Sahel, Est)", "Urgence": "Critique", "Recommandation Opérationnelle": "Bourses de maintien, gratuité intégrale des kits scolaires et campagnes communautaires."},
+            {"Constat Analytique": "Fracture Urbain-Rural majeure (-583 000 élèves ruraux)", "Urgence": "Critique", "Recommandation Opérationnelle": "Prioriser les investissements d'infrastructures et la réouverture sécurisée des écoles rurales."},
+            {"Constat Analytique": "Décrochage accentué des filles en fin de cycle (CM1-CM2)", "Urgence": "Élevée", "Recommandation Opérationnelle": "Construction prioritaire de blocs de latrines séparées et sécurisées (facteur n°1 de rétention)."},
+            {"Constat Analytique": "Décrochage des garçons en milieu urbain / minier", "Urgence": "Modérée", "Recommandation Opérationnelle": "Programmes de lutte contre l'orpaillage informel et renforcement de l'orientation post-primaire."},
+            {"Constat Analytique": "Chocs d'effectifs liés aux fermetures de classes", "Urgence": "Immédiate", "Recommandation Opérationnelle": "Cantines scolaires régulières d'urgence et classes passerelles pour Élèves Déplacés Internes (EDI)."}
+        ]
+        st.dataframe(pd.DataFrame(recs_data), use_container_width=True)
 
     # ------------------ ONGLET 7 : RESTITUTION & DOCUMENTS ------------------
     with tab7:
