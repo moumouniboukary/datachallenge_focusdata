@@ -105,12 +105,7 @@ if df is not None:
 
     st.sidebar.caption("💡 *Astuce : Dans votre dossier, vous pouvez aussi double-cliquer directement sur les fichiers `.bat` pour les ouvrir sans navigateur web.*")
 
-    st.sidebar.markdown("---")
-    st.sidebar.info("""
-    **Data Challenge Burkina 2026 — Défi 2**  
-    *Sources officielles :* DGESS / MENAPLN (2015/2016 à 2024/2025).  
-    *Méthodologie :* UNESCO, CONFEMEN, SCVE.
-    """)
+
 
 # En-tête principal
 st.title("🇧🇫 FocusEduc : Plateforme d'Analyse des Disparités Éducatives")
