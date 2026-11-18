@@ -12,8 +12,22 @@ Au Burkina Faso, le système éducatif fait face à une double fracture structur
 1. **Une fracture de genre** : Bien que l'accès initial au CP1 ait atteint des niveaux encourageants grâce aux campagnes de sensibilisation, le maintien des jeunes filles tout au long du cycle primaire reste fragile, marqué par une déperdition accélérée aux abords du certificat d'études primaires (CM1-CM2).
 2. **Une fracture territoriale (Urbain vs Rural)** : Alors que plus de 63% des effectifs scolarisables résident en milieu rural, les infrastructures (salles de classe en dur, adduction d'eau, blocs de latrines hygiéniques séparées) demeurent concentrées dans les centres urbains et les chefs-lieux régionaux. Cette précarité rurale a été lourdement exacerbée par les chocs sécuritaires de ces dernières années.
 
-### 1.2 La question centrale reformulée
-> **« Comment modéliser conjointement les fractures de genre et de milieu pour identifier l'intersection de vulnérabilité maximale (la jeune fille en milieu rural) et orienter l'allocation ciblée des ressources éducatives territoriales ? »**
+### 1.2 La Question Officielle du Défi et la Réponse Synthétique
+> **La Question du Défi : « Où les écarts d'accès à l'école sont-ils les plus grands (filles-garçons, ville-campagne) et évoluent-ils ? »**
+
+Notre analyse sur 10 ans apporte une réponse claire, territorialisée et quantifiée :
+
+1. **Où l'écart Filles-Garçons est-il le plus grand ?**
+   * **En accès initial (TBS/TBA) :** C'est dans le **Sahel** ($IPS = 0.88$) et à l'**Est** ($IPS = 0.91$) que les filles accusent le retard d'accès le plus prononcé.
+   * **En achèvement (TAP) :** Un contraste saisissant apparaît : dans les pôles urbains (**Centre, Hauts-Bassins**), la parité est favorable aux filles ($IPS_{TAP} > 1.15$), car les garçons décrochent précocement pour l'orpaillage ou le travail informel. En revanche, dans les zones sahéliennes et d'insécurité, le taux d'achèvement des filles s'effondre en-dessous de **25%**.
+
+2. **Où l'écart Ville-Campagne est-il le plus grand ?**
+   * La fracture est maximale entre le **Centre (Ouagadougou)**, pôle urbain où le TBS dépasse **95%** et l'achèvement **75%**, et la région rurale du **Sahel**, où le TBS chute à **28.5%** et l'achèvement à **18.2%** (différentiel de 1 à 4).
+   * Le milieu rural scolarise plus de **63% des effectifs du pays**, mais subit **90% des déficits de rétention** et des fermetures de classes.
+
+3. **Comment ces écarts évoluent-ils sur 10 ans (2015-2025) ?**
+   * **Parité filles-garçons :** Évolution **positive et convergente**. L'Indice de Parité national est passé de `0.940` (2015) à `0.996` (2025), atteignant la parité quasi-stricte en scolarisation.
+   * **Écart urbain-rural :** Évolution **divergente et heurtée par la crise**. Entre 2018 et 2023, le milieu rural a perdu plus de **583 000 élèves** (-24.5%), tandis que le milieu urbain a progressé (+32% d'effectifs avec l'accueil des élèves déplacés internes). Un rebond s'amorce nettement dès 2024-2025 avec la réouverture progressive des structures.
 
 ---
 
