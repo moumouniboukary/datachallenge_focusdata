@@ -113,27 +113,27 @@ st.markdown("**Mesure, Modélisation et Aide à la Décision pour l'Éducation a
 
 # Encadré officiel Défi 2 : Réponse directe aux 2 Grandes Questions
 st.markdown("""
-<div style="background: linear-gradient(135deg, #0d2b45 0%, #203c56 100%); padding: 20px 24px; border-radius: 12px; color: white; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border-left: 6px solid #20bf6b;">
-    <div style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; font-weight: 700; color: #20bf6b; margin-bottom: 8px;">
-        🎯 Défi 2 · Disparités d'accès à l'éducation — Cadre Officiel du Concours
+<div style="background: #f8f9fa; padding: 18px 22px; border-radius: 6px; margin-bottom: 22px; border: 1px solid #dee2e6; border-left: 4px solid #2E7D32;">
+    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: #2E7D32; margin-bottom: 12px;">
+        Défi 2 · Questions fondamentales — Disparités d'accès à l'éducation
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 10px;">
-        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px 16px; border-radius: 8px; border-top: 3px solid #f39c12;">
-            <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; color: #f39c12;">
-                1. Inégalités Filles vs Garçons : Sont-elles les plus fortes ?
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="background: #ffffff; padding: 14px 16px; border-radius: 4px; border: 1px solid #e0e0e0; border-top: 3px solid #1565C0;">
+            <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; color: #1565C0;">
+                Q1 · Inégalités filles / garçons : sont-elles les plus fortes ?
             </div>
-            <div style="font-size: 0.92rem; line-height: 1.45; color: #ecf0f1;">
-                <b>Non au niveau national</b> : L'accès au primaire a atteint la quasi-parité en 10 ans (IPS passé de <b>0.940 à 0.996</b>).<br>
-                <b>Oui localement</b> : Des poches de retard sévère subsistent au <b>Sahel (IPS 0.88)</b> et à l'<b>Est (IPS 0.91)</b>. En milieu urbain (Centre, Hauts-Bassins), la tendance s'inverse avec un achèvement plus fort chez les filles (IPS > 1.10).
+            <div style="font-size: 0.88rem; line-height: 1.55; color: #37474f;">
+                <b>Non au niveau national.</b> L'IPS au primaire est passé de 0,940 à 0,996 en 10 ans — la quasi-parité est atteinte.<br><br>
+                <b>Oui localement</b> : des disparités significatives persistent au <b>Sahel (IPS 0,88)</b> et à l'<b>Est (IPS 0,91)</b>. Dans les régions urbanisées, les filles surpassent les garçons à l'achèvement (IPS > 1,10).
             </div>
         </div>
-        <div style="background: rgba(255, 255, 255, 0.08); padding: 14px 16px; border-radius: 8px; border-top: 3px solid #e74c3c;">
-            <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; color: #e74c3c;">
-                2. Inégalités Urbain vs Rural : Sont-elles les plus fortes ?
+        <div style="background: #ffffff; padding: 14px 16px; border-radius: 4px; border: 1px solid #e0e0e0; border-top: 3px solid #B71C1C;">
+            <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; color: #B71C1C;">
+                Q2 · Inégalités urbain / rural : sont-elles les plus fortes ?
             </div>
-            <div style="font-size: 0.92rem; line-height: 1.45; color: #ecf0f1;">
-                <b>OUI, C'EST LA FRACTURE MAJEURE DU PAYS</b> : Le taux de scolarisation passe de <b>> 95% dans le Centre urbain</b> à <b>28.5% dans le Sahel rural</b> (ratio de 1 à 4).<br>
-                Entre 2018 et 2023, le milieu rural a perdu <b>583 000 élèves (-24.5%)</b> avec les fermetures de classes, pendant que les villes progressaient (+32%). Le rebond s'amorce nettement en 2024-2025.
+            <div style="font-size: 0.88rem; line-height: 1.55; color: #37474f;">
+                <b>Oui. C'est la fracture principale du système éducatif burkinabè.</b> Le taux de scolarisation varie de <b>&gt; 95 % dans les centres urbains</b> à <b>28,5 % dans le Sahel rural</b>.<br><br>
+                Entre 2018 et 2023, le milieu rural a perdu 583 000 élèves (−24,5 %) sous l'effet des fermetures d'écoles, pendant que les zones urbaines progressaient de +32 %.
             </div>
         </div>
     </div>
