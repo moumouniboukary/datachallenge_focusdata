@@ -117,6 +117,23 @@ if df is not None:
 st.title("🇧🇫 FocusEduc : Système d'Aide à la Décision Éducative")
 st.markdown("**Mesure, Modélisation et Réduction des Disparités Éducatives au Burkina Faso (2016-2025)**")
 
+# Encadré officiel Défi 2 : Question centrale et Réponse directe dès l'entrée
+st.markdown("""
+<div style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 18px 24px; border-radius: 10px; color: white; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; font-weight: 600; margin-bottom: 6px;">
+        🎯 Défi 2 · Disparités d'accès (Question officielle du concours)
+    </div>
+    <div style="font-size: 1.25rem; font-weight: 700; line-height: 1.4; margin-bottom: 12px;">
+        « Où les écarts d'accès à l'école sont-ils les plus grands (filles-garçons, ville-campagne) et évoluent-ils ? »
+    </div>
+    <div style="background: rgba(255, 255, 255, 0.12); padding: 12px 16px; border-radius: 6px; font-size: 0.95rem; line-height: 1.5;">
+        <b>Réponse synthétique issue des données officielles DGESS (2015-2025) :</b><br>
+        • <b>Filles-Garçons :</b> Le retard d'accès des filles est maximal au <b>Sahel</b> (IPS = 0.88) et à l'<b>Est</b> (IPS = 0.91). À l'inverse, dans les pôles urbains (Centre, Hauts-Bassins), les filles complètent davantage le primaire que les garçons (IPS achèvement > 1.15). Au niveau national, l'écart s'est résorbé en 10 ans (IPS passé de 0.940 à 0.996).<br>
+        • <b>Ville-Campagne :</b> C'est la fracture la plus profonde du pays. Le taux brut de scolarisation passe de <b>> 95% dans le Centre urbain</b> à <b>28.5% dans le Sahel rural</b> (ratio de 1 à 4). Entre 2018 et 2023, la crise a fait chuter les effectifs ruraux de <b>583 000 élèves (-24.5%)</b> pendant que les villes progressaient (+32%), avant un net rebond amorcé en 2024-2025.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 if df is not None:
     df_year = df[df["Annee_Scolaire"] == selected_year]
     reg_key = "NATIONAL" if selected_region == "Toutes les régions (National)" else selected_region
