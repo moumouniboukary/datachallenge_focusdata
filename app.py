@@ -99,11 +99,6 @@ if df is not None:
         with open(html_fiche_side, "r", encoding="utf-8") as f:
             st.sidebar.download_button("📄 Fiche Décisionnelle 1 Page", f.read(), file_name="fiche_decisionnelle_focuseduc.html", mime="text/html", use_container_width=True)
 
-    pdf_side = os.path.join(BASE_DIR, "docs", "RAPPORT_OFFICIEL_DEFI2.pdf")
-    if os.path.exists(pdf_side):
-        with open(pdf_side, "rb") as f:
-            st.sidebar.download_button("📘 Rapport PDF Officiel", f.read(), file_name="RAPPORT_OFFICIEL_DEFI2.pdf", mime="application/pdf", use_container_width=True)
-
     st.sidebar.caption("💡 *Astuce : Dans votre dossier, vous pouvez aussi double-cliquer directement sur les fichiers `.bat` pour les ouvrir sans navigateur web.*")
 
     st.sidebar.markdown("---")
