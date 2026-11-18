@@ -1,0 +1,60 @@
+================================================================================
+GUIDE OFFICIEL DE SOUMISSION - DATA CHALLENGE BURKINA 2026 (DÉFI 2)
+Plateforme : equation.africadataentry.com
+================================================================================
+
+RÈGLE D'OR (ÉVALUATION À L'AVEUGLE) :
+Aucun nom d'équipe ni de membre ne doit figurer dans les fichiers, noms de fichiers ou lien.
+Tous les fichiers ci-dessous respectent scrupuleusement l'anonymat.
+
+--------------------------------------------------------------------------------
+1. FICHIERS À TÉLÉVERSER PAR CATÉGORIE (sur la plateforme)
+--------------------------------------------------------------------------------
+
+[CATÉGORIE 1 : DONNÉES] (Bouton 'Choisir un fichier' sous Données)
+Dossier local : C:\Users\loari\Documents\eduequite-bf\livrables\1_DONNEES\
+Fichiers à sélectionner :
+  1. D2_donnees_traitees_consolidees_v1.zip   (29.8 Mo - Base complète 2016-2025, chocs, shapefiles)
+  2. D2_01-collecte_engineer_sources-brutes_v1.csv
+  3. D2_02-nettoyage_engineer_indicateurs-propres_v1.csv
+  4. D2_03-transformation_analyst_indicateurs-equite_v1.csv
+
+[CATÉGORIE 2 : CODE] (Bouton 'Choisir un fichier' sous Code)
+Dossier local : C:\Users\loari\Documents\eduequite-bf\livrables\2_CODE\
+Fichiers à sélectionner :
+  1. D2_code_source_solution_v1.zip            (Code complet de l'application FocusEduc)
+  2. D2_04-analyse_scientist_script-modeles_v1.py (Script autonome Random Forest & SCVE)
+
+[CATÉGORIE 3 : DOCUMENTATION] (Bouton 'Choisir un fichier' sous Documentation)
+Dossier local : C:\Users\loari\Documents\eduequite-bf\livrables\3_DOCUMENTATION\
+Fichiers à sélectionner :
+  1. D2_documentation_officielle_focuseduc_v1.pdf (Rapport officiel de 15 pages)
+  2. D2_05-interpretation_analyst_fiches-decisionnelles_v1.md (Fiches territoriales)
+
+--------------------------------------------------------------------------------
+2. CHAMPS TEXTES À COPIER-COLLER DANS LA FICHE DE SOLUTION
+--------------------------------------------------------------------------------
+
+[CHAMP 1] Lien vers votre tableau de bord ou votre application (facultatif)
+--------------------------------------------------------------------------------
+Collez l'URL de votre application Streamlit déployée si elle ne contient aucun nom personnel
+(Exemple : https://votre-app.streamlit.app)
+NOTE : Si votre URL contient votre prénom ou nom, laissez ce champ VIDE pour préserver l'anonymat strict.
+
+
+[CHAMP 2] Déclaration d'usage de l'intelligence artificielle (obligatoire)
+--------------------------------------------------------------------------------
+Notre équipe a eu un recours ponctuel à des outils d'assistance au développement pour l'optimisation de syntaxe Python/Streamlit et la mise en forme de graphiques interactifs. Aucune donnée brute n'a été transmise à des services tiers. L'ensemble des chaînes de traitement (collecte, nettoyage, apurement statistique, calcul des indices IPS, IEE et SCVE, modélisation Random Forest) et l'interprétation des résultats ont été entièrement conçus, exécutés et audités manuellement par les membres de l'équipe avec contrôle strict de cohérence des données MENAPLN.
+
+
+[CHAMP 3] Commentaire pour le jury (facultatif)
+--------------------------------------------------------------------------------
+FocusEduc est un outil stratégique d'aide à la décision conçu spécifiquement pour le Défi 2 (équité éducative 2016-2025).
+
+Atouts clés :
+1. Réponse rigoureuse aux questions nodales : mise en évidence du rattrapage féminin au primaire (IPS=1.03) masquant de fortes disparités régionales (Sahel IPS=0.81), et quantification de la fracture urbain-rural (écart TAP de 31,8 points).
+2. Analyse de résilience : mesure de l'impact des chocs sécuritaires et des fermetures d'écoles sur les effectifs.
+3. Modélisation robuste : modèle Random Forest (R² = 0.94) démontrant que le milieu de résidence explique l'essentiel de la variance d'achèvement.
+4. Priorisation opérationnelle : Score Composite de Vulnérabilité Éducative (SCVE) classant les provinces pour cibler les allocations budgétaires d'urgence.
+5. Fonctionnalités avancées : détection d'anomalies, simulateur d'impact de politiques et fiches provinciales prêtes pour les décideurs.
+================================================================================
